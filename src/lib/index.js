@@ -2,12 +2,8 @@ import { ElementPicker } from "pick-dom-element";
 import unique from 'unique-selector';
 
 class GleapHelper {
-  currentMode = 'navigate';
   picker = null;
-
-  constructor() {
-    window.addEventListener('message', this.receiveMessage, false);
-  }
+  onElementPicked = null;
 
   stopPicker = () => {
     if (this.picker) {
@@ -19,15 +15,15 @@ class GleapHelper {
 
   startPicker = () => {
     this.stopPicker();
+    var self = this;
 
-    const style = { borderColor: "#0000ff" };
+    const style = { borderColor: "#2142E7", background: "transparent", borderWidth: "4px", borderRadius: "5px" };
     this.picker = new ElementPicker({ style });
     this.picker.start({
-      onHover: (el) => console.log(`Hover: ${el.tagName}`),
       onClick: (el) => {
         try {
           var selector = unique(el);
-          window.parent.postMessage({ action: 'elementPicked', selector: selector }, '*');
+          self.onElementPicked && self.onElementPicked(selector);
         } catch (e) { }
       },
     });
@@ -42,20 +38,6 @@ class GleapHelper {
       this.startPicker();
     }
   }
-
-  receiveMessage = (event) => {
-    if (event.origin !== "https://app.gleap.io") {
-      // return;
-    }
-
-    if (!event.data || !event.data.helperApp) {
-      return;
-    }
-
-    if (event.data.action === 'setMode') {
-      this.setMode(event.data.mode);
-    }
-  };
 }
 
 export default GleapHelper;

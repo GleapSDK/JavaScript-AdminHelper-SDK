@@ -1,9 +1,9 @@
 /*!
  * 
- *   @hodgef/js-library-boilerplate-basic v1.6.245
- *   https://github.com/hodgef/js-library-boilerplate-basic
+ *   gleap-admin-helper v1.0.0
+ *   https://github.com/GleapSDK/JavaScript-AdminHelper-SDK
  *
- *   Copyright (c) Francisco Hodge (https://github.com/hodgef) and project contributors.
+ *   Copyright (c) Lukas Böhler (https://gleap.io) and project contributors.
  *
  *   This source code is licensed under the MIT license found in the
  *   LICENSE file in the root directory of this source tree.

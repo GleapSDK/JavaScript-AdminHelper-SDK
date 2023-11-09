@@ -1,8 +1,10 @@
 import GleapHelper from "../lib";
 const GleapHelperInstance = new GleapHelper();
 
-document.querySelector("body").innerHTML = `<h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1><h1 id="234">Hello World!</h1>`;
+document.querySelector("body").innerHTML = `<h1>Hello World!</h1><a href="https://www.google.com">Link test</a>`;
 
-console.log("GleapHelperInstance", GleapHelperInstance);
+GleapHelperInstance.onElementPicked = (selector) => {
+    console.log("selector", selector);
+};
 
 GleapHelperInstance.startPicker(); 
