@@ -26,6 +26,12 @@ class GleapHelper {
           self.onElementPicked && self.onElementPicked(selector);
         } catch (e) { }
       },
+      elementFilter: (el) => {
+        if (el.classList.contains('gleap-admin-collapse-ui') || el.closest('.gleap-admin-collapse-ui')) {
+          return false;
+        }
+        return true;
+      }
     });
   };
 
