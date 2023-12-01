@@ -1,6 +1,6 @@
 {
   "name": "gleap-admin-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helper library for the Gleap JS SDK.",
   "main": "build/index.js",
   "scripts": {
