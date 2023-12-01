@@ -1,6 +1,6 @@
 /*!
  * 
- *   gleap-admin-helper v1.0.2
+ *   gleap-admin-helper v1.0.3
  *   https://github.com/GleapSDK/JavaScript-AdminHelper-SDK
  *
  *   Copyright (c) Lukas Böhler (https://gleap.io) and project contributors.
